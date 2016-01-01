@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
         $i++;
     }
     $temp = json_encode(array('dataList'=>$users));
-    echo json_encode(array('status'=>1,'data'=>array('dataList'=>$users),'msg'=>'success'));
+    echo json_encode(array('status'=>1,'data'=>$users,'msg'=>'success'));
 } else {
     echo "0 results";
 }
