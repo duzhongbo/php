@@ -29,3 +29,15 @@ if ($result->num_rows > 0) {
 $conn->close();
 
 ?>
+
+<a href="javascript:;" onclick="call()">发请求</a>
+<script type="text/javascript" src="zepto.min.js"></script>
+<script type="text/javascript">
+function call(){
+	$.get('3.php',function(json){
+		console.log(json);
+	})
+}
+
+
+</script>
