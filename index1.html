@@ -12,6 +12,10 @@ password: <input type="text" name="password" id="password"><br>
 email: <input type="text" name="email" id="email"><br>
 <input type="button" onclick="submit()">
 
+<ul id="J_all">
+	<li>111-222-333</li>
+</ul>
+
 <script type="text/javascript" src="zepto.min.js"></script>
 <script type="text/javascript">
 // 数据提交	
@@ -31,9 +35,19 @@ function all(){
 	$.get('getAllUser.php',function(json){
 		var data = JSON.parse(json);
 		console.log(json,data);
+		render(data.data);
 	})
 }
 all();
+
+// 渲染全部数据
+function render(aData){
+	var sHtml = '';
+	for(var i=0,len=aData.length;i<len;i++){
+		sHtml+='<li>'+aData[i].username+'-'+aData[i].password+'-'+aData[i].email+'</li>';
+	}
+	J_all.innerHTML = sHtml;
+}
 
 </script>
 
