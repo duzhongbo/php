@@ -22,7 +22,7 @@ $sql = "INSERT INTO user (username, password, email)
 VALUES ('$user', '$age', '$email')";
 
 if ($conn->query($sql) === TRUE) {
-    echo json_encode(array('status'=>1,'data'=>'{}','msg'=>'success'));
+    echo json_encode(array('status'=>1,'data'=>array(),'msg'=>'success'));
 } else {
     echo "<br><br>Error: " . $sql . "<br>" . $conn->error;
 }
