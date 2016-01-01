@@ -14,7 +14,7 @@ email: <input type="text" name="email" id="email"><br>
 
 <script type="text/javascript" src="zepto.min.js"></script>
 <script type="text/javascript">
-	
+// 数据提交	
 function submit(){
 	$.post('3.php',{
 		username:username.value,
@@ -26,6 +26,14 @@ function submit(){
 	})
 }
 
+// 获取全量数据
+function all(){
+	$.get('1.php',function(json){
+		var data = JSON.parse(json);
+		console.log(json,data);
+	})
+}
+all();
 
 </script>
 
