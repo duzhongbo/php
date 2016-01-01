@@ -1,9 +1,3 @@
-<form action="2.php" method="post">
-Name: <input type="text" name="fname">
-Age: <input type="text" name="age">
-<input type="submit">
-</form>
-
 <?php
 $servername = "localhost";
 $username = "root";
@@ -19,6 +13,7 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully <br>";
 
+// 读取数据
 $sql = "SELECT * FROM user";
 $result = $conn->query($sql);
 
