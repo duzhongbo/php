@@ -27,6 +27,11 @@ function submit(){
 	},function(json){
 		data = JSON.parse(json)
 		console.log(data);
+		addOne({
+		username:username.value,
+		password:password.value,
+		email:email.value,
+		});
 	})
 }
 
@@ -47,6 +52,10 @@ function render(aData){
 		sHtml+='<li>'+aData[i].username+'-'+aData[i].password+'-'+aData[i].email+'</li>';
 	}
 	J_all.innerHTML = sHtml;
+}
+// 添加一条信息
+function addOne(oData){
+	J_all.innerHTML+='<li>'+oData.username+'-'+oData.password+'-'+oData.email+'</li>';
 }
 
 </script>
