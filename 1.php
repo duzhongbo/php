@@ -35,7 +35,8 @@ $conn->close();
 <script type="text/javascript">
 function call(){
 	$.get('3.php',function(json){
-		console.log(json);
+		var data = JSON.parse(json);
+		console.log(data,data.c);
 	})
 }
 
