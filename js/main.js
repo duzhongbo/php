@@ -8,11 +8,17 @@ function submit(){
 		password:password.value,
 		email:email.value,
 	},function(json){
+		// 新增用户渲染到页面
 		addOne({
 		username:username.value,
 		password:password.value,
 		email:email.value,
 		});
+		// 表单置空
+		username.value='';
+		password.value='';
+		email.value='';
+
 	},'json')
 }
 // 数据验证
