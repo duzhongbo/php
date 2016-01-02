@@ -1,11 +1,10 @@
 <?php
-
 if(isset($_REQUEST['act'])){
 	$act = $_REQUEST['act'];
 	if($act=='add'){
-		include('addUser.php');
+		include('/server/addUser.php');
 	}else if($act=='getAll'){
-		include 'getAllUser.php';
+		include '/server/getAllUser.php';
 	}
 }
 
