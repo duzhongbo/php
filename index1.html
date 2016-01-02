@@ -25,14 +25,13 @@ function submit(){
 		password:password.value,
 		email:email.value,
 	},function(json){
-		data = JSON.parse(json)
-		console.log(data);
+		console.log(json);
 		addOne({
 		username:username.value,
 		password:password.value,
 		email:email.value,
 		});
-	})
+	},'json')
 }
 
 // 获取全量数据
