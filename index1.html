@@ -25,7 +25,6 @@ function submit(){
 		password:password.value,
 		email:email.value,
 	},function(json){
-		console.log(json);
 		addOne({
 		username:username.value,
 		password:password.value,
@@ -37,10 +36,8 @@ function submit(){
 // 获取全量数据
 function all(){
 	$.get('getAllUser.php',function(json){
-		var data = JSON.parse(json);
-		console.log(json,data);
-		render(data.data);
-	})
+		render(json.data);
+	},'json');
 }
 all();
 
