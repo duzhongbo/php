@@ -19,15 +19,15 @@ function submit(){
 function check(){
 	var _username = username.value,_password = password.value,_email = email.value;
 	if(_username==''){
-		alert('用户名输入不能为空');
+		usernameTip.innerHTML='用户名输入不能为空';
 		username.focus();
 		return false;
 	}else if(_password==''){
-		alert('密码不能为空');
+		passwordTip.innerHTML='密码不能为空';
 		password.focus();
 		return false;
 	}else if(_email==''){
-		alert('邮箱不能为空');
+		emailTip.innerHTML='邮箱不能为空';
 		email.focus();
 		return false;
 	}
