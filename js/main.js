@@ -1,5 +1,8 @@
 // 数据提交	
 function submit(){
+	if(!check()){
+		return;
+	}
 	$.post('server.php?act=add',{
 		username:username.value,
 		password:password.value,
@@ -11,6 +14,21 @@ function submit(){
 		email:email.value,
 		});
 	},'json')
+}
+// 数据验证
+function check(){
+	var _username = username.value,_password = password.value,_email = email.value;
+	if(_username==''){
+		alert('用户名输入不能为空');
+		return false;
+	}else if(_password==''){
+		alert('密码不能为空');
+		return false;
+	}else if('邮箱不能为空'){
+		alert('邮箱不能为空');
+		return false;
+	}
+	return true;
 }
 
 // 获取全量数据
