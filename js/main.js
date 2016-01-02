@@ -23,10 +23,13 @@ function check(){
 		username.focus();
 		return false;
 	}else if(_password==''){
+		usernameTip.innerHTML='';
 		passwordTip.innerHTML='密码不能为空';
 		password.focus();
 		return false;
 	}else if(_email==''){
+		usernameTip.innerHTML='';
+		passwordTip.innerHTML='';
 		emailTip.innerHTML='邮箱不能为空';
 		email.focus();
 		return false;
