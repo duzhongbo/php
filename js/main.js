@@ -36,7 +36,15 @@ function check(){
 	}
 	return true;
 }
-
+// 监控表单输入
+function listenForm(){
+	username.onkeyup=function(){
+		if(username.value!=''){
+			usernameTip.innerHTML='';
+		}
+	}
+}
+listenForm();
 // 获取全量数据
 function all(){
 	$.get('server.php?act=getAll',function(json){
