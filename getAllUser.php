@@ -23,7 +23,6 @@ if ($result->num_rows > 0) {
 	$i=0;
     // 输出每行数据
     while($row = $result->fetch_assoc()) {
-        // echo "<br> username: ". $row["username"]. " - Name: ". $row["password"]. " " . $row["email"];
         $users[$i]=$row;
         $i++;
     }
