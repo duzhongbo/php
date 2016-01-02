@@ -5,11 +5,15 @@
 	<title>Document</title>
 </head>
 <body>
-	
 
-username: <input type="text" name="username" id="username"><span id="usernameTip"></span><br>
-password: <input type="text" name="password" id="password"><span id="passwordTip"></span><br>
-email: <input type="text" name="email" id="email"><span id="emailTip"></span><br>
+<style type="text/css">
+.tip{color: #f00;}
+
+</style>	
+
+username: <input type="text" name="username" id="username"><span id="usernameTip" class="tip"></span><br>
+password: <input type="text" name="password" id="password"><span id="passwordTip" class="tip"></span><br>
+email: <input type="text" name="email" id="email"><span id="emailTip" class="tip"></span><br>
 <input type="button" onclick="submit()" value="提交">
 
 <ul id="J_all"></ul>
