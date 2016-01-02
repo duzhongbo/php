@@ -43,6 +43,16 @@ function listenForm(){
 			usernameTip.innerHTML='';
 		}
 	}
+	password.onkeyup=function(){
+		if(password.value!=''){
+			passwordTip.innerHTML='';
+		}
+	}
+	email.onkeyup=function(){
+		if(email.value!=''){
+			emailTip.innerHTML='';
+		}
+	}
 }
 listenForm();
 // 获取全量数据
