@@ -20,12 +20,15 @@ function check(){
 	var _username = username.value,_password = password.value,_email = email.value;
 	if(_username==''){
 		alert('用户名输入不能为空');
+		username.focus();
 		return false;
 	}else if(_password==''){
 		alert('密码不能为空');
+		password.focus();
 		return false;
-	}else if('邮箱不能为空'){
+	}else if(_email==''){
 		alert('邮箱不能为空');
+		email.focus();
 		return false;
 	}
 	return true;
