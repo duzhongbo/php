@@ -59,6 +59,9 @@ function listenForm(){
 	}
 	// 用户名重复性验证
 	username.onblur=function(){
+		if(username.value==''){
+			return;
+		}
 		$.post('server.php?act=check',{
 			username:username.value
 		},function(json){
