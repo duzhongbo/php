@@ -18,23 +18,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql1 = 'select * from user where username="'.$user.'"';
-$result = $conn->query($sql1);
-print_r($sql1);
-if ($result->num_rows > 0) {
-	echo json_encode(array('status'=>0,'data'=>array(),'msg'=>'该用户名已存在，请使用其他名称'));
-}else{
-	$sql2 = "INSERT INTO user (username, password, email)
-	VALUES ('$user', '$age', '$email')";
+$sql = "INSERT INTO user (username, password, email)
+VALUES ('$user', '$age', '$email')";
 
-	if ($conn->query($sql2) === TRUE) {
-	    echo json_encode(array('status'=>1,'data'=>array(),'msg'=>'success'));
-	} else {
-	    echo "<br><br>Error: " . $sql2 . "<br>" . $conn->error;
-	}
+if ($conn->query($sql) === TRUE) {
+    echo json_encode(array('status'=>1,'data'=>array(),'msg'=>'success'));
+} else {
+    echo "<br><br>Error: " . $sql . "<br>" . $conn->error;
 }
-
-
 
 $conn->close();
 } 
