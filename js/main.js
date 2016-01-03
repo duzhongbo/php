@@ -49,6 +49,16 @@ function listenForm(){
 			usernameTip.innerHTML='';
 		}
 	}
+	// 用户名重复性验证
+	username.onblur=function(){
+		$.post('server.php?act=check',{
+			username:username.value
+		},function(json){
+			if(!json.status){
+				$('#usernameTip').html(json.msg);
+			}
+		},'json');
+	}
 	password.onkeyup=function(){
 		if(password.value!=''){
 			passwordTip.innerHTML='';
