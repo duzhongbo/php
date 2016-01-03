@@ -32,16 +32,21 @@ function check(){
 		if($('#username').attr('status')!='0'){
 			usernameTip.innerHTML='';
 		}
-		
 		passwordTip.innerHTML='密码不能为空';
 		password.focus();
 		return false;
 	}else if(_email==''){
-		usernameTip.innerHTML='';
+		if($('#username').attr('status')!='0'){
+			usernameTip.innerHTML='';
+		}		
 		passwordTip.innerHTML='';
 		emailTip.innerHTML='邮箱不能为空';
 		email.focus();
 		return false;
+	}else{
+		if($('#username').attr('status')=='0'){
+			return false;
+		}
 	}
 	return true;
 }
