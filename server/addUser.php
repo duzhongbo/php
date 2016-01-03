@@ -18,13 +18,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO user (username, password, email)
+$sql2 = "INSERT INTO user (username, password, email)
 VALUES ('$user', '$age', '$email')";
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql2) === TRUE) {
     echo json_encode(array('status'=>1,'data'=>array(),'msg'=>'success'));
 } else {
-    echo "<br><br>Error: " . $sql . "<br>" . $conn->error;
+    echo "<br><br>Error: " . $sql2 . "<br>" . $conn->error;
 }
 
 $conn->close();
