@@ -29,7 +29,10 @@ function check(){
 		username.focus();
 		return false;
 	}else if(_password==''){
-		usernameTip.innerHTML='';
+		if($('#username').attr('status')!='0'){
+			usernameTip.innerHTML='';
+		}
+		
 		passwordTip.innerHTML='密码不能为空';
 		password.focus();
 		return false;
@@ -56,6 +59,7 @@ function listenForm(){
 		},function(json){
 			if(!json.status){
 				$('#usernameTip').html(json.msg);
+				$('#username').attr('status','0');
 			}
 		},'json');
 	}
