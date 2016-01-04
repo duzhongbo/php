@@ -67,7 +67,9 @@ function listenForm(){
 		},function(json){
 			if(!json.status){
 				$('#usernameTip').html(json.msg);
-				$('#username').attr('status','0');
+				$('#username').attr('status',0);
+			}else{
+				$('#username').attr('status',1);
 			}
 		},'json');
 	}

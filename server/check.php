@@ -21,6 +21,8 @@ if(isset($_POST["username"])){
 
 	if ($result->num_rows > 0) {
 		echo json_encode(array('status'=>0,'data'=>array(),'msg'=>'该用户名已存在，请使用其他名称'));
+	}else{
+		echo json_encode(array('status'=>1,'data'=>array(),'msg'=>'success'));
 	}
 }
 
