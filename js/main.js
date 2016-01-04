@@ -43,10 +43,8 @@ function check(){
 		emailTip.innerHTML='邮箱不能为空';
 		email.focus();
 		return false;
-	}else{
-		if($('#username').attr('status')=='0'){
-			return false;
-		}
+	}else if($('#username').attr('status')=='0'){
+		return false;
 	}
 	return true;
 }
